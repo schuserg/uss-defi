@@ -22,3 +22,32 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 
+## 🖼 Screenshots
+
+### 🌐 DApp Frontend
+
+**Wallet Connected**  
+<img src="screenshots/ui_connect.png" width="500"/>
+
+**Mint 100 USSToken**  
+<img src="screenshots/ui_mint.png" width="500"/>
+
+**Stake Tokens**  
+<img src="screenshots/ui_stake.png" width="500"/>
+
+**Claim Rewards**  
+<img src="screenshots/ui_claim.png" width="500"/>
+
+**Withdraw Funds**  
+<img src="screenshots/ui_withdraw.png" width="500"/>
+
+**Final Balance**  
+<img src="screenshots/ui_balance.png" width="500"/>
+
+---
+
+### 🛰 Event Listener Log
+
+<img src="screenshots/listener.png" width="800"/>
+
+

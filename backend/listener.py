@@ -50,7 +50,10 @@ while True:
     for event_name in event_names:
         event = getattr(contract.events, event_name)
         try:
-            logs = event().get_logs(fromBlock=start_block, toBlock=latest)
+            logs = event.get_logs(
+                from_block=start_block,
+                to_block=latest
+            )
             for log in logs:
                 entry = {
                     "event": event_name,
@@ -60,7 +63,7 @@ while True:
                     "timestamp": datetime.utcnow().isoformat() + "Z"
                 }
                 save_log(entry)
-                print(f"📥 {event_name}: {entry}")
+                print(f"📬 {event_name}: {entry}")
         except Exception as e:
             print(f"⚠️ Error while fetching {event_name}: {e}")
     start_block = latest + 1
