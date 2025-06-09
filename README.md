@@ -1,3 +1,7 @@
+![Backend CI](https://github.com/schuserg/uss-defi/actions/workflows/backend.yml/badge.svg)
+![Frontend CI](https://github.com/schuserg/uss-defi/actions/workflows/frontend.yml/badge.svg)
+![Lint](https://github.com/schuserg/uss-defi/actions/workflows/lint.yml/badge.svg)
+
 # 🧱 USS DeFi: Staking DApp
 
 A minimal and transparent DeFi project on Ethereum Sepolia Testnet. It allows users to:
