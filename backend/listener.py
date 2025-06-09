@@ -5,28 +5,28 @@ from dotenv import load_dotenv
 from web3 import Web3
 from datetime import datetime
 
-# Загрузка .env переменных
+# Load .env variables
 load_dotenv()
 WEB3_PROVIDER = os.getenv("WEB3_PROVIDER")
 STAKING_ADDRESS = os.getenv("USSSTAKING_ADDRESS")
 
-# Подключение к сети
+# Connect to network
 w3 = Web3(Web3.HTTPProvider(WEB3_PROVIDER))
-assert w3.is_connected(), "❌ RPC недоступен"
+assert w3.is_connected(), "❌ RPC unavailable"
 
-# Загрузка ABI из файла
+# Load ABI from file
 with open("build/artifacts/USSStaking.abi.json", "r") as f:
     abi = json.load(f)
 
-# Контракт
+# Contract
 contract = w3.eth.contract(address=STAKING_ADDRESS, abi=abi)
 
-# События
+# Events
 event_names = ["Staked", "Claimed", "Withdrawn", "WithdrawnAll"]
 log_file = "logs/mint_log.json"
 os.makedirs("logs", exist_ok=True)
 
-# Начальный блок
+# Starting block
 start_block = w3.eth.block_number
 
 def save_log(entry):
@@ -43,7 +43,7 @@ def save_log(entry):
 def format_amount(value):
     return float(value) / 1e18
 
-print("📡 Слушатель запущен. Ожидаем события...")
+print("📡 Listener started. Waiting for events...")
 
 while True:
     latest = w3.eth.block_number
@@ -62,6 +62,6 @@ while True:
                 save_log(entry)
                 print(f"📥 {event_name}: {entry}")
         except Exception as e:
-            print(f"⚠️ Ошибка при получении {event_name}: {e}")
+            print(f"⚠️ Error while fetching {event_name}: {e}")
     start_block = latest + 1
     time.sleep(5)

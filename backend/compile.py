@@ -10,14 +10,14 @@ def compile_contracts():
     contract_dir = Path(__file__).resolve().parent.parent / "contracts"
     sources = {}
 
-    # Какие директории игнорировать (полностью)
+    # Directories to fully ignore
     IGNORED_DIRS = ["@openzeppelin", "node_modules"]
 
     def is_ignored(file: Path):
-        # Игнорируем по полному совпадению пути
+        # Ignore if any part matches ignored directories
         if any(part in IGNORED_DIRS for part in file.parts):
             return True
-        # В папке utils оставляем только ReentrancyGuard.sol
+        # In utils folder, keep only ReentrancyGuard.sol
         if "utils" in file.parts and file.name != "ReentrancyGuard.sol":
             return True
         return False

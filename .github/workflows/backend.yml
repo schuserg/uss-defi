@@ -17,7 +17,7 @@ jobs:
         working-directory: backend
 
     steps:
-      - name: 🔄 Checkout repo
+      - name: 🧾 Checkout repo
         uses: actions/checkout@v3
 
       - name: 🐍 Set up Python
@@ -30,7 +30,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: ✅ Run basic lint (flake8)
+      - name: 🔍 Run Ruff linter
         run: |
-          pip install flake8
-          flake8 . --count --exit-zero --max-line-length=100 --statistics
+          pip install ruff
+          ruff .
+

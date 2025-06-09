@@ -124,5 +124,25 @@
       "amount": 200.0
     },
     "timestamp": "2025-06-09T12:35:13.023879Z"
+  },
+  {
+    "event": "Staked",
+    "block": 8511924,
+    "txHash": "36305a587232f6281ade482bee6bce3ab8dc1520bb44429fe84677c28353213f",
+    "args": {
+      "user": "0xED0cB22ddcac032d907F6d87E8B2C924a55e6873",
+      "amount": 200.0
+    },
+    "timestamp": "2025-06-09T15:31:05.226132Z"
+  },
+  {
+    "event": "Staked",
+    "block": 8511932,
+    "txHash": "22128810dc34a12ac0d2aaffe62f9b1f3367e25f7f71efb1ea25bfedc6eec7fc",
+    "args": {
+      "user": "0xED0cB22ddcac032d907F6d87E8B2C924a55e6873",
+      "amount": 300.0
+    },
+    "timestamp": "2025-06-09T15:32:38.985918Z"
   }
 ]
