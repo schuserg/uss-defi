@@ -1,0 +1,6 @@
+.env
+logs/mint_log.json
+__pycache__/
+node_modules/
+build/
+venv/
