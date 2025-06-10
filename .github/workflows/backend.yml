@@ -33,5 +33,5 @@ jobs:
       - name: 🔍 Run Ruff linter
         run: |
           pip install ruff
-          ruff .
+          ruff backend
 
